@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="logo">
+<Block>
+
+<instructions xsi:type="ProcCall" Call="//@instructions.1">
+</instructions>
+
+<instructions xsi:type="Proc" Name="Cercle">
+<Contain>
+	<instructions xsi:type="Constant" Name="x" Value="36" />
+	<instructions xsi:type="Constant" Name="y" Value="5" />
+	<instructions xsi:type="Constant" Name="p" Value="0" />
+	<instructions xsi:type="Repeat" >
+	<condition  xsi:type="Constant" Name="x"  />
+	<Repeat>
+	<instructions  xsi:type="Equals" >
+	<LBinary  xsi:type="Constant" Name="p" />
+	<RBinary  xsi:type="Div" >
+	<RBinary xsi:type="Constant" Name="x" />
+	<LBinary xsi:type="Number" Value="360" />
+	</RBinary>
+	</instructions>
+	<instructions xsi:type="Repeat">
+	<condition  xsi:type="Constant" Name="x" />
+	<Repeat>
+	<instructions xsi:type="Right">
+	<angle  xsi:type="Constant" Name="p"  />
+	</instructions>
+	<instructions xsi:type="Forward">
+	<steps  xsi:type="Constant" Name="y"  />
+	</instructions>
+	</Repeat>
+	</instructions>
+	</Repeat>
+	</instructions>
+</Contain>
+</instructions>
+</Block>
+</xmi:XMI>

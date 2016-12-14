@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="logo">
+<Block>
+    
+            <instructions xsi:type="Constant" Name="x" Value="0" />
+       		<instructions xsi:type="While">
+            <condition xsi:type="Lower"  >
+        	<LBinary   xsi:type="Constant" Name="x" />
+            <RBinary   xsi:type="Number"  Value="4" />
+            </condition>
+            <While>
+           <instructions xsi:type="If" >
+           <condition xsi:type="Equals"  >
+        	<LBinary   xsi:type="Number"  Value="0"  />
+            <RBinary   xsi:type="Constant"  Name="x" />
+           </condition>
+           <Then>
+           <instructions xsi:type="Right">
+           <angle xsi:type="Constant" Value="90" />
+           </instructions>
+           <instructions xsi:type="Forward">
+           <steps xsi:type="Constant" Value="30" />
+           </instructions>
+           <instructions  xsi:type="Equals" >
+            	<LBinary xsi:type="Constant" Name="x" />
+            	<RBinary  xsi:type="Number" Value="1" />   
+            </instructions>
+           </Then>
+           <Else>
+           		 <instructions xsi:type="If" >
+           		 <condition xsi:type="Equals"  >
+        	     <LBinary   xsi:type="Number"  Value="1"  />
+                 <RBinary   xsi:type="Constant"  Name="x" />
+                 </condition>
+                 <Then>
+                 <instructions xsi:type="Left">
+                 <angle xsi:type="Constant" Value="90" />
+                 </instructions>
+                 <instructions xsi:type="Forward">
+                <steps xsi:type="Constant" Value="30" />
+                </instructions>
+                 <instructions  xsi:type="Equals" >
+            	<LBinary xsi:type="Constant" Name="x" />
+            	<RBinary  xsi:type="Number" Value="2" />   
+           		 </instructions>
+                 </Then>
+                 <Else >
+                 			<instructions xsi:type="If" >
+                 			<condition xsi:type="Equals"  >
+        	                <LBinary   xsi:type="Number"  Value="2"  />
+                            <RBinary   xsi:type="Constant"  Name="x" />
+                            </condition>
+                            <Then>
+                            <instructions xsi:type="Right">
+                            <angle xsi:type="Constant" Value="90" />
+                            </instructions>
+                            <instructions xsi:type="Forward">
+                            <steps xsi:type="Constant" Value="30" />
+                            </instructions>
+                            <instructions  xsi:type="Equals" >
+            				<LBinary xsi:type="Constant" Name="x" />
+            				<RBinary  xsi:type="Number" Value="3" />   
+           					 </instructions>
+                            </Then>
+                            <Else>
+                                 <instructions xsi:type="Left">
+                                 <angle xsi:type="Constant" Value="90" />
+                                 </instructions>
+                                 <instructions xsi:type="Forward">
+                                 <steps xsi:type="Constant" Value="30" />
+                                 </instructions>
+                                 <instructions  xsi:type="Equals" >
+            					<LBinary xsi:type="Constant" Name="x" />
+            					<RBinary  xsi:type="Number" Value="4" />   
+           						 </instructions>
+                            </Else>
+                            </instructions>
+                 </Else>
+                 </instructions>
+           </Else>
+           </instructions>
+           </While>
+           </instructions>
+     
+</Block>
+</xmi:XMI>

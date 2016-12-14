@@ -1,0 +1,220 @@
+module Logo2Java;
+create OUT : Java from IN : Logo;
+
+rule Block2Block{
+	from 
+	c:Logo!Block
+	to
+	t:Java!Block(
+		instructions<-c.instructions
+		)
+}
+rule Number2Number{
+	from 
+	c:Logo!Number
+	to
+	t:Java!Number(
+		Value<-c.Value
+		)
+}
+rule Constant2Constant{
+	from 
+	c:Logo!Constant
+	to
+	t:Java!Constant(
+		Value<-c.Value,
+		Name<-c.Name
+		)
+}
+
+rule Repeat2For{
+	from
+	c:Logo!Repeat
+	to
+	t:Java!For(
+		condition<-c.condition,
+		For<-c.Repeat
+	)	
+}
+rule While2While{
+	from
+	c:Logo!While
+	to
+	t:Java!While(
+		condition<-c.condition,
+		While<-c.While
+	)	
+}
+rule If2If{
+	from
+	c:Logo!If
+	to
+	t:Java!If(
+		condition<-c.condition,
+		Then<-c.Then,
+		Else<-c.Else
+	)	
+}
+rule Div2Div{
+	from 
+	c:Logo!Div
+	to
+	t:Java!Div(
+		RBinary<-c.RBinary,LBinary<-c.LBinary
+		)
+}
+rule Plus2Plus{
+	from 
+	c:Logo!Plus
+	to
+	t:Java!Plus(
+		RBinary<-c.RBinary,LBinary<-c.LBinary
+		)
+}
+rule Minus2Minus{
+	from 
+	c:Logo!Minus
+	to
+	t:Java!Minus(
+		RBinary<-c.RBinary,LBinary<-c.LBinary
+		)
+}
+rule Mult2Mult{
+	from 
+	c:Logo!Mult
+	to
+	t:Java!Mult(
+		RBinary<-c.RBinary,LBinary<-c.LBinary
+		)
+}
+rule Equals2Equals{
+	from 
+	c:Logo!Equals
+	to
+	t:Java!Equals(
+		RBinary<-c.RBinary,LBinary<-c.LBinary
+		)
+}
+rule Greater2Greater{
+	from 
+	c:Logo!Greater
+	to
+	t:Java!Greater(
+		RBinary<-c.RBinary,LBinary<-c.LBinary
+		)
+}
+rule Lower2Lower{
+	from 
+	c:Logo!Lower
+	to
+	t:Java!Lower(
+		RBinary<-c.RBinary,LBinary<-c.LBinary
+		)
+}
+rule Right2DrawMethod{
+	from
+	c:Logo!Right
+	to
+	f:Java!DrawMethod(
+		Params<-l,
+		Name<-'Right'
+	),
+	l:Java!Constant(
+		Value<-c.angle.Value,
+		Name<-c.angle.Name
+	)
+}
+
+rule Left2DrawMethod{
+	from
+	c:Logo!Left
+	to
+	f:Java!DrawMethod(
+		Params<-l,
+		Name<-'Left'
+	),
+	l:Java!Constant(
+		Value<-c.angle.Value,
+		Name<-c.angle.Name
+	)
+}
+rule Back2DrawMethod{
+	from
+	c:Logo!Back
+	to
+	f:Java!DrawMethod(
+		Params<-l,
+		Name<-'Back'
+	),
+	l:Java!Constant(
+		Value<-c.steps.Value,
+		Name<-c.steps.Name
+	)
+}
+rule Forward2DrawMethod{
+	from
+	c:Logo!Forward
+	to
+	f:Java!DrawMethod(
+		Params<-l,
+		Name<-'Forward'
+	),
+	l:Java!Constant(
+		Value<-c.steps.Value,
+		Name<-c.steps.Name
+	)
+}
+rule PenUp2DrawMethod{
+	from
+	c:Logo!PenUp
+	to
+	f:Java!DrawMethod(
+		Name<-'PenUp'
+	)
+}
+rule PenDown2DrawMethod{
+	from
+	c:Logo!PenDown
+	to
+	f:Java!DrawMethod(
+		Name<-'PenDown'
+	)
+}
+rule ProcCall2CallMethod{
+	from 
+	c:Logo!ProcCall
+	to
+	t:Java!CallMethod(
+		Args<-c.actualArgs,
+		Call<-c.Call
+	)
+}
+rule ParameterCall2ParameterCall{
+	from
+	c:Logo!ParameterCall
+	to
+	t:Java!ParameterCall(
+		parameter<-c.parameter	
+	)
+}
+rule Proc2Method{
+	from
+	c:Logo!Proc
+	to
+	t:Java!Method(
+		name<-c.Name,
+		parameters<-c.Args,
+		Contain<-c.Contain,
+		Return<-c.Return
+	)
+}
+rule Parameter2Prameter{
+	from
+	c:Logo!Parameter
+	to
+		t:Java!Parameter(
+		name<-c.Name
+	)
+}
+
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://java/1.0">
+  <java:Block instructions="/1 /2"/>
+  <java:Constant Name="x"/>
+  <java:While>
+    <condition xsi:type="java:Lower">
+      <RBinary xsi:type="java:Number" Value="4"/>
+      <LBinary xsi:type="java:Constant" Name="x"/>
+    </condition>
+    <While instructions="/3"/>
+  </java:While>
+  <java:If>
+    <condition xsi:type="java:Equals">
+      <RBinary xsi:type="java:Constant" Name="x"/>
+      <LBinary xsi:type="java:Number"/>
+    </condition>
+    <Then instructions="/10 /18 /6"/>
+    <Else instructions="/4"/>
+  </java:If>
+  <java:If>
+    <condition xsi:type="java:Equals">
+      <RBinary xsi:type="java:Constant" Name="x"/>
+      <LBinary xsi:type="java:Number" Value="1"/>
+    </condition>
+    <Then instructions="/14 /20 /7"/>
+    <Else instructions="/5"/>
+  </java:If>
+  <java:If>
+    <condition xsi:type="java:Equals">
+      <RBinary xsi:type="java:Constant" Name="x"/>
+      <LBinary xsi:type="java:Number" Value="2"/>
+    </condition>
+    <Then instructions="/12 /22 /8"/>
+    <Else instructions="/16 /24 /9"/>
+  </java:If>
+  <java:Equals>
+    <RBinary xsi:type="java:Number" Value="1"/>
+    <LBinary xsi:type="java:Constant" Name="x"/>
+  </java:Equals>
+  <java:Equals>
+    <RBinary xsi:type="java:Number" Value="2"/>
+    <LBinary xsi:type="java:Constant" Name="x"/>
+  </java:Equals>
+  <java:Equals>
+    <RBinary xsi:type="java:Number" Value="3"/>
+    <LBinary xsi:type="java:Constant" Name="x"/>
+  </java:Equals>
+  <java:Equals>
+    <RBinary xsi:type="java:Number" Value="4"/>
+    <LBinary xsi:type="java:Constant" Name="x"/>
+  </java:Equals>
+  <java:DrawMethod Params="/11" Name="Right"/>
+  <java:Constant Value="90"/>
+  <java:DrawMethod Params="/13" Name="Right"/>
+  <java:Constant Value="90"/>
+  <java:DrawMethod Params="/15" Name="Left"/>
+  <java:Constant Value="90"/>
+  <java:DrawMethod Params="/17" Name="Left"/>
+  <java:Constant Value="90"/>
+  <java:DrawMethod Params="/19" Name="Forward"/>
+  <java:Constant Value="30"/>
+  <java:DrawMethod Params="/21" Name="Forward"/>
+  <java:Constant Value="30"/>
+  <java:DrawMethod Params="/23" Name="Forward"/>
+  <java:Constant Value="30"/>
+  <java:DrawMethod Params="/25" Name="Forward"/>
+  <java:Constant Value="30"/>
+</xmi:XMI>
